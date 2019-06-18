@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Master</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label style="color:red">{{ message1 }}</label><br/>
+		<label style="color:red">{{ message2 }}</label><br/>
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+{% endblock %}

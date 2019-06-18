@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <title>{% block title %}Show Master{% endblock %}</title>
+</head>
+<header>
+	Show Master View<br/>
+</header>
+<center>
+<search>
+<table cellpadding="5px">
+	<form method="GET">
+        {{ view.form }}
+	<tr><td></td><td><button type="submit" class="btn btn-primary">Search</button></td></tr>
+	</form>
+</table>
+</search>
+</center>
+<article>
+<table width="100%">
+    <tr align="center"><td colspan="5"><a href="/bms/items_pdf/" target="_blank">Get Show Master List</a></td></tr>
+    <tr align="center">
+        <td><b>Show Code</b></td>
+        <td><b>Show Name</b></td>
+        <td><b>Start Date</b></td>
+        <td></td>
+	    <td></td>
+    </tr>
+    {% for item in view %}
+    <tr align="center">
+        <td>{{ item.show_code }}</td>
+        <td>{{ item.show_name }}</td>
+        <td>{{ item.start_date }}</td>
+    <td><a href="/bms/itemsupdate/{{ item.short_name }}">Update</a></td>
+	<td><a href="" onclick="return popitup('/bms/itdelete/{{ item.short_name }}')">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</article>
+
+{% endblock %}

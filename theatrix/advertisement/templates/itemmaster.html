@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <title>{% block title %}Item Master{% endblock %}</title>
+</head>
+<header>
+	Item Master View<br/>
+</header>
+<center>
+<search>
+<table cellpadding="5px">
+	<form method="GET">
+        {{ view.form }}
+	<tr><td></td><td><button type="submit" class="btn btn-primary">Search</button></td></tr>
+	</form>
+</table>
+</search>
+</center>
+<article>
+<table width="100%">
+    <tr align="center"><td colspan="7"><a href="/bms/items_pdf/" target="_blank">Get Item Master List</a></td></tr>
+    <tr align="center">
+        <td><b>Item Code</b></td>
+        <td><b>Item Name</b></td>
+        <td><b>Location</b></td>
+        <td><b>SAC Code</b></td>
+        <td><b>GST</b></td>
+    <td></td>
+	<td></td>
+    </tr>
+    {% for item in view %}
+    <tr align="center">
+        <td>{{ item.it_code }}</td>
+        <td>{{ item.it_name }}</td>
+        <td>{{ item.location }}</td>
+        <td>{{ item.sac_code }}</td>
+        <td>{{ item.gst }}</td>
+    <td><a href="/bms/itemsupdate/{{ item.short_name }}">Update</a></td>
+	<td><a href="" onclick="return popitup('/bms/itdelete/{{ item.short_name }}')">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</article>
+
+{% endblock %}

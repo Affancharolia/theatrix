@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <title>{% block title %}Type Master{% endblock %}</title>
+    <script type="text/javascript">
+  function popup(mylink, windowname) {
+    if (! window.focus)return true;
+    var href;
+    if (typeof(mylink) == 'string') href=mylink;
+    else href=mylink.href;
+    window.open(href, windowname, 'width=400,height=200,scrollbars=yes');
+    return false;
+  }
+    </script>
+</head>
+<header>
+	Show Type View<br/>
+</header>
+<center>
+<search>
+<table cellpadding="5px">
+	<form method="GET">
+        {{ view.form }}
+	<tr><td></td><td><button type="submit" class="btn btn-primary">Search</button></td></tr>
+	</form>
+</table>
+</search>
+</center>
+<article>
+<table width="100%">
+    <tr align="center"><td colspan="4"><a href="/bms/items_pdf/" target="_blank">Get Type Master List</a></td></tr>
+    <tr align="center">
+        <td><b>Type</b></td>
+        <td><b>Type Name</b></td>
+        <td></td>
+	    <td></td>
+    </tr>
+    {% for item in view %}
+    <tr align="center">
+        <td>{{ item.type }}</td>
+        <td>{{ item.type_name }}</td>
+    <td><a href="/bms/itemsupdate/{{ item.short_name }}">Update</a></td>
+	<td><a href='delete/{{ item.type }}' onclick="return popitup(this, Delete Record)">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</article>
+
+{% endblock %}

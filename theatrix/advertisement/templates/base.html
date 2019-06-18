@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theatrix</title>
+    <link href="{% static 'advertisement/css/style.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'advertisement/css/navbar.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+    <div class="nav-bar">
+        <ul class="nav-menu">
+            <li><a href="#">Masters ▾</a>
+                <ul>
+                    <li><a href="#">Account Master ▾</a>
+                    <ul>
+                        <li><a href="#">Add New</a></li>
+                        <li><a href="#">View</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Show Master ▾</a>
+                    <ul>
+                        <li><a href="#">Add New</a></li>
+                        <li><a href="#">View</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Item Master ▾</a>
+                    <ul>
+                        <li><a href="#">Add New</a></li>
+                        <li><a href="#">View</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Size Master ▾</a>
+                    <ul>
+                        <li><a href="#">Add New</a></li>
+                        <li><a href="#">View</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">AD Type Master ▾</a>
+                    <ul>
+                        <li><a href="#">Add New</a></li>
+                        <li><a href="#">View</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Company Master ▾</a>
+                    <ul>
+                        <li><a href="#">Add New</a></li>
+                        <li><a href="#">View</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">State Master </a>
+                </ul>
+            </li>
+            <li><a href="#">Quotation ▾</a>
+            <ul>
+                <li><a href="#">Add New</a></li>
+                <li><a href="#">View</a></li>
+                <li><a href="#">Details Add New</a></li>
+                <li><a href="#">Details View</a></li>
+            </ul>
+            </li>
+
+            <li><a href="#">Media Planner ▾</a>
+            <ul>
+                <li><a href="#">Add New</a></li>
+                <li><a href="#">View</a></li>
+                <li><a href="#">Update</a></li>
+            </ul>
+            </li>
+
+        <li><a href="#">Invoice ▾</a>
+        <ul>
+            <li><a href="#">Add New</a></li>
+            <li><a href="#">View</a></li>
+            <li><a href="#">Print Invoices</a></li>
+        </ul>
+        </li>
+
+        <li><a href="#">Reports ▾</a>
+        <ul>
+          <li><a href="#">Sale Reports ▾</a>
+              <ul>
+                  <li><a href="#">Sales Register</a></li>
+                  <li><a href="#">Sales Tax</a></li>
+                  <li><a href="#">GSTR Form-1</a></li>
+                  <li><a href="#">GST Report</a></li>
+                  <li><a href="#">Item-wise Detailed Sales Report</a></li>
+                  <li><a href="#">GST HSN Sales Summary</a></li>
+              </ul>
+          </li>
+          <li><a href="#">Total Tax Summary</a></li>
+
+          <li><a href="#">Transaction Reports</a>
+          <ul>
+                  <li><a href="#"> </a></li>
+                  <li><a href="#"> </a></li>
+          </ul>
+          </li>
+        </ul>
+        </li>
+      <li>
+            <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+      </li>
+     </ul>
+    </div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

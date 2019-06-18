@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <title>{% block title %}Item Master{% endblock %}</title>
+</head>
+<header>
+	Item Master View<br/>
+</header>
+<center>
+<search>
+<table cellpadding="5px">
+	<form method="GET">
+        {{ view.form }}
+	<tr><td></td><td><button type="submit" class="btn btn-primary">Search</button></td></tr>
+	</form>
+</table>
+</search>
+</center>
+<article>
+<table width="100%">
+    <tr align="center"><td colspan="24"><a href="/bms/items_pdf/" target="_blank">Get Item Master List</a></td></tr>
+    <tr align="center">
+        <td><b>Code</b></td>
+        <td><b>Full name</b></td>
+        <td><b>Address line 1</b></td>
+        <td><b>Address line 2</b></td>
+        <td><b>City</b></td>
+        <td><b>ZIP / Postal code</b></td>
+        <td><b>State Code</b></td>
+        <td><b>GST Number</b></td>
+        <td><b>PAN / Aadhar Number</b></td>
+        <td><b>Business Partner Type</b></td>
+        <td><b>Business Group</b></td>
+        <td><b>Balance Sheet Group</b></td>
+        <td><b>Balance Sheet Sub-Group</b></td>
+        <td><b>Opening Balance</b></td>
+        <td><b>Closing Balance</b></td>
+        <td><b>Temp. Balance</b></td>
+        <td><b>User</b></td>
+        <td><b>Update Date and Time</b></td>
+        <td><b>Share-Dep %</b></td>
+        <td><b>Email</b></td>
+        <td><b>Phone</b></td>
+        <td><b>Password</b></td>
+    <td></td>
+	<td></td>
+    </tr>
+    {% for item in view %}
+    <tr align="center">
+        <td>{{ item.code }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.address_1 }}</td>
+        <td>{{ item.address_2 }}</td>
+        <td>{{ item.city }}</td>
+        <td>{{ item.pin }}</td>
+        <td>{{ item.state_code }}</td>
+        <td>{{ item.gst_no }}</td>
+        <td>{{ item.pan_aadhar_no }}</td>
+        <td>{{ item.bp_type }}</td>
+        <td>{{ item.group_code }}</td>
+        <td>{{ item.bsgrp }}</td>
+        <td>{{ item.bssubgrp }}</td>
+        <td>{{ item.opbal }}</td>
+        <td>{{ item.clbal }}</td>
+        <td>{{ item.temp_bal }}</td>
+        <td>{{ item.user }}</td>
+        <td>{{ item.upd_time }}</td>
+        <td>{{ item.share_dep }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone }}</td>
+        <td>{{ item.pwd }}</td>
+    <td><a href="/bms/itemsupdate/{{ item.short_name }}">Update</a></td>
+	<td><a href="" onclick="return popitup('/bms/itdelete/{{ item.short_name }}')">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</article>
+
+{% endblock %}
